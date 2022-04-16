@@ -3,6 +3,7 @@ import PageContent from '../PageContent';
 import About from '../About';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Page({ currentPage }) {
     const renderPage=() => {
@@ -17,10 +18,10 @@ function Page({ currentPage }) {
                 return <About />;
         }
     };
-    
+
     return (
         <section>
-            <h2 {currentPage.name}></h2>
+            <h2>{capitalizeFirstLetter(currentPage.name)}</h2>
             <PageContent>{renderPage()}</PageContent>
         </section>
     )
